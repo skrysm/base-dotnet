@@ -3,6 +3,7 @@
 
 root = true
 
+# All files
 [*]
 end_of_line = lf
 indent_style = space
@@ -11,6 +12,9 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 charset = utf-8
 
+# Markdown
 [*.md]
-# 3 spaces are required for separating child lists from parent lists (e.g. 1. or *)
-indent_size = 3
+# For explanation why tabs are used for Markdown, see: https://github.com/skrysmanski/base/blob/master/docs/markdown-indentation.md
+indent_style = tab
+# Let the user decide which tab size works for them.
+indent_size = unset
