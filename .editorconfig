@@ -1,5 +1,6 @@
 # Editor configuration
-# Example: https://editorconfig.org/#example-file
+# For details, see: https://editorconfig.org/#file-format-details
+
 root = true
 
 [*]
