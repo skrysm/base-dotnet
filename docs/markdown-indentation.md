@@ -60,6 +60,8 @@ The rules of indenting Markdown with spaces are more complicated than indenting 
 
 **Note:** While most Markdown interpreters (i.e. the software that converts your Markdown file into an HTML file or something else) seem to agree on how to interpret tabs for indentation, there seem to be different "opinions" on how to interpret spaces for indentation - especially if you use less than 4 spaces for indentation. So, if you use spaces with an indent size of 2 or 3, you may risk compatibility. There is an excellent article by Brett Terpstra that goes into even more detail on the matter of compatibility: <https://brettterpstra.com/2015/08/24/write-better-markdown/>
 
+**Note 2:** The one place where **spaces are better than tabs** in Markdown is [tables](https://www.markdownguide.org/extended-syntax/#tables). Since tab width can be anything, aligning the pipe characters with tabs may result in visually unaligned "columns".
+
 ## Indentation Reference Example
 
 > This example contains the various situations where indentation is used in Markdown. It's indented with tabs. You can use it as reference "test" for when you want to use a different indentation style.
