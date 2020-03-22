@@ -2,8 +2,8 @@
 
 When it comes to text file encoding, it usually boils down to two options:
 
-1.	UTF-8 with [BOM](https://en.wikipedia.org/wiki/Byte_order_mark)
-1.	UTF-8 without BOM
+1.  UTF-8 with [BOM](https://en.wikipedia.org/wiki/Byte_order_mark)
+1.  UTF-8 without BOM
 
 There's lots of discussion about this. This document explains the decisions about when to use BOM and when to not use it.
 
@@ -13,8 +13,8 @@ There's lots of discussion about this. This document explains the decisions abou
 
 The end result is as follows:
 
-*	By default, files are encoded with UTF-8 **without BOM**.
-*	UTF-8 **with BOM** is selected only for specified file types - for which it is known that the BOM doesn't cause any problems.
+*   By default, files are encoded with UTF-8 **without BOM**.
+*   UTF-8 **with BOM** is selected only for specified file types - for which it is known that the BOM doesn't cause any problems.
 
 So basically there is/will be a UTF-8-BOM [whitelist](https://en.wikipedia.org/wiki/Whitelisting).
 
@@ -28,8 +28,8 @@ While most software developers write code and comments in English, not everyone 
 
 And even if all code and comments are written in English, there are still places where non-English characters can appear in code files:
 
-*	If the software is written for a non-English market, it may contain **literal strings** in the target language (like status or error messages).
-*	Code comments may contain the **names of code authors**. And these names may contain non-English characters.
+*   If the software is written for a non-English market, it may contain **literal strings** in the target language (like status or error messages).
+*   Code comments may contain the **names of code authors**. And these names may contain non-English characters.
 
 ## Why use the BOM at all?
 
@@ -47,8 +47,8 @@ One would assume that nowadays every piece of (maintained) software out there sh
 
 While probably all text editors and compilers can handle the UTF-8-BOM, there are some commonly used pieces of software that can't handle it:
 
-* On Linux/Unix, files with a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) must not have a BOM.
-* On Windows, Batch scripts (`.cmd`, `.bat`) must not have a BOM.
+*   On Linux/Unix, files with a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) must not have a BOM.
+*   On Windows, Batch scripts (`.cmd`, `.bat`) must not have a BOM.
 
 The shebang is especially "tricky" when writing cross-platform script files. For example, on Windows a PowerShell script may very well be encoded with UTF-8-BOM. But if the same script file contains a shebang for Linux/Unix, it must instead be encoded with UTF-8 without BOM - or it won't work on Linux/Unix.
 
