@@ -14,6 +14,7 @@ charset = utf-8
 
 # Markdown
 [*.md]
+charset = utf-8-bom
 # For explanation why tabs are used for Markdown, see: https://github.com/skrysmanski/base/blob/master/docs/markdown-indentation.md
 indent_style = tab
 # Let the user decide which tab size works for them.
