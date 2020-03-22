@@ -3,19 +3,29 @@
 
 root = true
 
+#
 # All files
+#
 [*]
-end_of_line = lf
-indent_style = space
-indent_size = 4
-trim_trailing_whitespace = true
-insert_final_newline = true
+# For reasoning about encoding, see: https://github.com/skrysmanski/base/blob/master/docs/utf8-and-bom.md
 charset = utf-8
 
+end_of_line = lf
+
+indent_style = space
+indent_size = 4
+
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+#
 # Markdown
+#
 [*.md]
 charset = utf-8-bom
+
 # For explanation why tabs are used for Markdown, see: https://github.com/skrysmanski/base/blob/master/docs/markdown-indentation.md
 indent_style = tab
+
 # Let the user decide which tab size works for them.
 indent_size = unset
