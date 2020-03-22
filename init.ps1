@@ -6,6 +6,11 @@ Remove-Item "$PSScriptRoot/.git" -Recurse -Force
 Write-Host -ForegroundColor Cyan 'Removing "README.md"...'
 Remove-Item "$PSScriptRoot/README.md"
 
+# NOTE: The license is just for the base repo. It doesn't apply to
+#   the newly created repo/project.
+Write-Host -ForegroundColor Cyan 'Removing "LICENSE.txt"...'
+Remove-Item "$PSScriptRoot/LICENSE.txt"
+
 Write-Host -ForegroundColor Cyan 'Removing "init.ps1"...'
 Remove-Item "$PSScriptRoot/init.ps1"
 
