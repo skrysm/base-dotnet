@@ -59,3 +59,9 @@ indent_size = 2
 # files - and always creates .csproj files with crlf. Thus, we enforce the end-of-line
 # characters in .gitattributes instead.
 end_of_line = unset
+
+#
+# ReSharper settings files
+#
+[*.DotSettings]
+indent_style = tab
