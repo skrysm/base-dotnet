@@ -3,7 +3,7 @@
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Import Project="$(MSBuildThisFileDirectory)\Project.Shared.props" />
+  <Import Project="$(MSBuildThisFileDirectory)Project.Shared.props" />
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>

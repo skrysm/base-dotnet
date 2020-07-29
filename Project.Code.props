@@ -3,11 +3,12 @@
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Import Project="$(MSBuildThisFileDirectory)\Project.Shared.props" />
+  <Import Project="$(MSBuildThisFileDirectory)Project.Shared.props" />
 
   <PropertyGroup>
     <!-- See: https://docs.microsoft.com/de-de/dotnet/core/tools/csproj#nuget-metadata-properties -->
     <Copyright>Copyright © COMPANY YEAR</Copyright>
+    <!-- See: https://spdx.org/licenses/ -->
     <PackageLicenseExpression>LICENSE</PackageLicenseExpression>
     <RepositoryUrl>URL</RepositoryUrl>
   </PropertyGroup>
