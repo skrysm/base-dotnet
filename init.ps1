@@ -32,7 +32,7 @@ Write-Host -ForegroundColor Cyan 'Adding skeleton files...'
 & git add *
 & git commit -m 'Added repository skeleton'
 
-if (-Not ([System.Environment]::OSVersion.Platform -ne 'Win32NT')) {
+if ([System.Environment]::OSVersion.Platform -ne 'Win32NT') {
     & chmod +x "$PSScriptRoot/git-clean.sh"
 }
 
