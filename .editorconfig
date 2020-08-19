@@ -27,3 +27,6 @@ charset = utf-8-bom
 # For explanation why spaces are used for Markdown, see: https://github.com/skrysmanski/base/blob/master/docs/markdown-indentation.md
 indent_style = space
 indent_size = 4
+
+[*.{bat,cmd}]
+end_of_line = crlf
