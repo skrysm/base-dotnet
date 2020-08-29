@@ -29,12 +29,15 @@ else {
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Adding skeleton files...'
-& git add *
-& git commit -m 'Added repository skeleton'
 
-if ([System.Environment]::OSVersion.Platform -ne 'Win32NT') {
-    & chmod +x "$PSScriptRoot/git-clean.sh"
-}
+# IMPORTANT: We need to use "." here instead of "*" or hidden dot files won't be added
+#   on Linux.
+& git add .
+
+# Make sure the file is executable on Linux/macOS
+& git add --chmod=+x git-clean.sh
+
+& git commit -m 'Added repository skeleton'
 
 Write-Host
 Write-Host -ForegroundColor Green 'Done'
