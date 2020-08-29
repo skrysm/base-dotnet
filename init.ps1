@@ -19,11 +19,24 @@ Remove-Item "$PSScriptRoot/docs" -Recurse -Force
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Initializing new Git repository...'
-& git init "$PSScriptRoot"
+$gitVersion = & git version
+if ($gitVersion -ge 'git version 2.28.0') {
+    & git init --initial-branch=main "$PSScriptRoot"
+}
+else {
+    & git init "$PSScriptRoot"
+}
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Adding skeleton files...'
-& git add *
+
+# IMPORTANT: We need to use "." here instead of "*" or hidden dot files won't be added
+#   on Linux.
+& git add .
+
+# Make sure the file is executable on Linux/macOS
+& git add --chmod=+x git-clean.sh
+
 & git commit -m 'Added repository skeleton'
 
 Write-Host
