@@ -1,5 +1,10 @@
 <!--
   Default settings for all production code (i.e. non-test) projects.
+
+  To use it, create a .NET Core or .NET Standard project (modern project format)
+  and then add this line at the top:
+
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Project.Code.props', '$(MSBuildThisFileDirectory)'))" />
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
