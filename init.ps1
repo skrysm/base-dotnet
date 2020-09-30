@@ -27,17 +27,25 @@ else {
     & git init "$PSScriptRoot"
 }
 
-Write-Host
-Write-Host -ForegroundColor Cyan 'Adding skeleton files...'
+try {
+    # Make sure we're in the right directory.
+    Push-Location $PSScriptRoot
 
-# IMPORTANT: We need to use "." here instead of "*" or hidden dot files won't be added
-#   on Linux.
-& git add .
+    Write-Host
+    Write-Host -ForegroundColor Cyan 'Adding skeleton files...'
 
-# Make sure the file is executable on Linux/macOS
-& git add --chmod=+x git-clean.sh
+    # IMPORTANT: We need to use "." here instead of "*" or hidden dot files won't be added
+    #   on Linux.
+    & git add .
 
-& git commit -m 'Added repository skeleton'
+    # Make sure the file is executable on Linux/macOS
+    & git add --chmod=+x git-clean.sh
+
+    & git commit -m 'Added repository skeleton'
+}
+finally {
+    Pop-Location
+}
 
 Write-Host
 Write-Host -ForegroundColor Green 'Done'
