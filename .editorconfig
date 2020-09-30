@@ -1,5 +1,10 @@
-# Editor configuration
+#################################################################################
+#
+# Editor Configurations
+#
 # For details, see: https://editorconfig.org/#file-format-details
+#
+#################################################################################
 
 root = true
 
