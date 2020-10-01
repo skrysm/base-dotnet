@@ -63,6 +63,7 @@ dotnet_style_qualification_for_method = false:suggestion
 dotnet_style_qualification_for_event = true:suggestion
 
 dotnet_sort_system_directives_first = true:suggestion
+dotnet_separate_import_directive_groups = true:suggestion
 
 #
 # Code analysis rules
