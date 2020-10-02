@@ -70,6 +70,8 @@ dotnet_separate_import_directive_groups = true:suggestion
 #
 # For each rule, see: https://docs.microsoft.com/en-us/visualstudio/code-quality/caXXXX
 #
+# TODO: This section can be moved to a central place once https://github.com/dotnet/roslyn/issues/47707 is implemented
+#
 
 # CA1031: Do not catch general exception types
 # Reason: There are lots of places (especially in reusable library code) that make catching "Exception"
