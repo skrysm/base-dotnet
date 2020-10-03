@@ -68,7 +68,7 @@ dotnet_separate_import_directive_groups = true:suggestion
 #
 # Code analysis rules
 #
-# For each rule, see: https://docs.microsoft.com/en-us/visualstudio/code-quality/caXXXX
+# For each rule, see: https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/caXXXX
 #
 # TODO: This section can be moved to a central place once https://github.com/dotnet/roslyn/issues/47707 is implemented
 #
