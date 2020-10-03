@@ -70,6 +70,8 @@ dotnet_separate_import_directive_groups = true:suggestion
 #
 # For each rule, see: https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/caXXXX
 #
+# The FxCop project: https://github.com/dotnet/roslyn-analyzers
+#
 # TODO: This section can be moved to a central place once https://github.com/dotnet/roslyn/issues/47707 is implemented
 #
 
