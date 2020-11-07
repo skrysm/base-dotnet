@@ -68,6 +68,8 @@ dotnet_separate_import_directive_groups = true:suggestion
 #
 # Code analysis rules
 #
+# For configuration options, see: https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-options
+#
 # For each rule, see: https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/caXXXX
 #
 # The FxCop project: https://github.com/dotnet/roslyn-analyzers
