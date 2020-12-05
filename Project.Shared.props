@@ -44,6 +44,12 @@
       * For more details, see: https://www.hanselman.com/blog/how-to-make-a-winforms-app-with-net-5-entirely-from-the-command-line-and-publish-as-one-selfcontained-file
     -->
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+
+    <!--
+      When trimming, disable unsafe UTF7 support. (Why would we need this?)
+      See: https://github.com/dotnet/runtime/blob/master/docs/workflow/trimming/feature-switches.md#available-feature-switches
+    -->
+    <EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
   </PropertyGroup>
 
   <ItemGroup>
