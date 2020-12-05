@@ -28,6 +28,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
+  <PropertyGroup Label="Publishing">
+    <!--
+      On Windows (and apparently also on macOS) publishing an executable as "single file" does not
+      actually produce a single file. The .NET runtime's native .dlls are not put into the created file
+      but placed in the same folder (resulting in more than one file).
+
+      This setting changes this - resulting in an executable that self-extracts into a temporary folder.
+      It's not as nice as having an executable that needs no extraction but from a deployment standpoint
+      it's nicer to actually have only one file.
+
+      Notes:
+      * This setting is not required when publishing to Linux (here everything works as expected).
+      * For .NET 6, Microsoft is working on a solution that no longer needs extraction: https://github.com/dotnet/runtime/issues/43071
+      * For more details, see: https://www.hanselman.com/blog/how-to-make-a-winforms-app-with-net-5-entirely-from-the-command-line-and-publish-as-one-selfcontained-file
+    -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
   </ItemGroup>
