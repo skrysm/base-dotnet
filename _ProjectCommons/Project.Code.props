@@ -29,6 +29,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Shared assembly attributes that can't be set via .props file. -->
+    <Compile Include="$(MSBuildThisFileDirectory)CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!--
       Provides Microsoft's/.NET's static code analyzers.
 
