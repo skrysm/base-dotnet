@@ -6,25 +6,27 @@
 
     <Import Project="$(ProjectCommonsDirectory)Project.NuGetPackage.props" />
 
+  Afterwards, it's recommended to create a "<ProjectName>.NuGet.props" file for each
+  project and put all NuGet related information into this file.
+
 -->
 <!-- You can find the latest version of this file here: https://github.com/skrysmanski/base-dotnet -->
 <Project>
 
   <!--
-    NuGet (and assembly) properties
+    Default NuGet properties
 
-    Additional properties to specify on each project: <PackageId>, <Description>, <Authors>
+    Additional properties to specify on each project: <Description>, <Authors>, <PackageLicenseExpression>, <RepositoryUrl>
 
     See:
     * https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties
     * https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target
     * https://docs.microsoft.com/en-us/nuget/reference/nuspec
+
+    For valid license expressions, see: https://spdx.org/licenses/
   -->
   <PropertyGroup>
-    <!-- See: https://spdx.org/licenses/ -->
-    <PackageLicenseExpression>LICENSE</PackageLicenseExpression>
-
-    <RepositoryUrl>URL</RepositoryUrl>
+    <!-- Assume git by default. -->
     <RepositoryType>git</RepositoryType>
 
     <!-- Why would this ever by "false"? -->
