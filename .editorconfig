@@ -141,6 +141,13 @@ end_of_line = unset
 
 
 #
+# Razor files
+#
+[*.cshtml]
+charset = utf-8-bom
+
+
+#
 # .props files
 #
 [*.props]
