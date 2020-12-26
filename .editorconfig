@@ -6,6 +6,8 @@
 #
 # For Visual Studio additions, see: https://aka.ms/editorconfigdocs
 #
+# You can find the latest version of this file here: https://github.com/skrysmanski/base-dotnet
+#
 #################################################################################
 
 root = true
