@@ -27,6 +27,7 @@
       See also: https://github.com/dotnet/sdk/issues/2679
     -->
     <DebugSymbols>true</DebugSymbols>
+    <!-- NOTE: "embedded" means "embedded portable". It's the same format as "portable", just integrated into the assembly. -->
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 
