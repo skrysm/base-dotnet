@@ -17,6 +17,9 @@ Remove-Item "$PSScriptRoot/init.ps1"
 Write-Host -ForegroundColor Cyan 'Removing "docs/"...'
 Remove-Item "$PSScriptRoot/docs" -Recurse -Force
 
+Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
+Remove-Item "$PSScriptRoot/*/_keep.txt" -Recurse -Force
+
 Write-Host
 Write-Host -ForegroundColor Cyan 'Initializing new Git repository...'
 $gitVersion = & git version
