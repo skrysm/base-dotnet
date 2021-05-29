@@ -49,7 +49,7 @@ try {
     Write-Host
     Write-Host -ForegroundColor Cyan 'Adding style guide files...'
 
-    & git submodule add https://github.com/skrysmanski/AppMotor.StyleGuide.git
+    & git submodule add https://github.com/skrysmanski/AppMotor.StyleGuide.git _StyleGuide/
 
     & git commit -m 'Added style guide submodule'
 }
