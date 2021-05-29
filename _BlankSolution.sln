@@ -23,12 +23,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_ProjectCommons", "_Project
 		_ProjectCommons\Project.Tests_Packages.props = _ProjectCommons\Project.Tests_Packages.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_StyleGuide", "_StyleGuide", "{FB7975C6-3C2F-4728-B3D0-DA59F3F724E4}"
+	ProjectSection(SolutionItems) = preProject
+		_StyleGuide\ca.globalconfig = _StyleGuide\ca.globalconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BA1E9B9F-AD3B-41A4-B9AC-490A101FD762} = {D449EFC6-4D96-4FF2-B01F-A4748B50D9C3}
+		{FB7975C6-3C2F-4728-B3D0-DA59F3F724E4} = {D449EFC6-4D96-4FF2-B01F-A4748B50D9C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF64C9CC-C599-47C6-892D-FB620795361C}
