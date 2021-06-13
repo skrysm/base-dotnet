@@ -1,6 +1,9 @@
 #!/usr/bin/env pwsh
 param(
-    [string] $KeepGitCleanFiles = 'yes'
+    [string] $KeepGitCleanFiles = 'yes',
+
+    [Parameter(Mandatory=$True)]
+    [string] $SolutionName
 )
 
 # Stop on every error
@@ -19,6 +22,8 @@ $script:ErrorActionPreference = 'Stop'
 
     default { Write-Error "Invalid input: $KeepGitCleanFiles" }
 }
+
+$SolutionName = $SolutionName.TrimEnd('.sln')
 
 Write-Host -ForegroundColor Cyan 'Removing ".git"...'
 Remove-Item "$PSScriptRoot/.git" -Recurse -Force
@@ -42,8 +47,13 @@ if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.sh"
 }
 
+
 Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
 Remove-Item "$PSScriptRoot/*/_keep.txt" -Recurse -Force
+
+Rename-Item "$PSScriptRoot/_BlankSolution.sln" "$PSScriptRoot/$SolutionName.sln"
+Rename-Item "$PSScriptRoot/_BlankSolution.sln.DotSettings" "$PSScriptRoot/$SolutionName.sln.DotSettings"
+
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Initializing new Git repository...'
