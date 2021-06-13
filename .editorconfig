@@ -36,6 +36,21 @@ indent_size = 4
 
 
 #
+# .json files
+#
+[*.json]
+indent_style = tab
+indent_size = 4
+
+
+#
+# .yaml files
+#
+[*.{yml,yaml}]
+indent_size = 2
+
+
+#
 # Windows batch files
 #
 [*.{bat,cmd}]
