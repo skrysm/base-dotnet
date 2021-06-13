@@ -1,4 +1,24 @@
 #!/usr/bin/env pwsh
+param(
+    [string] $KeepGitCleanFiles = 'yes'
+)
+
+# Stop on every error
+$script:ErrorActionPreference = 'Stop'
+
+# NOTE: The cast to [bool] is required (for some reason); if we didn't
+#   do this here, '$KeepGitCleanFiles' would remain a string.
+[bool] $KeepGitCleanFiles = switch ($KeepGitCleanFiles) {
+    'yes'    { $true }
+    'true'   { $true }
+    '$true'  { $true }
+
+    'no'     { $false }
+    'false'  { $false }
+    '$false' { $false }
+
+    default { Write-Error "Invalid input: $KeepGitCleanFiles" }
+}
 
 Write-Host -ForegroundColor Cyan 'Removing ".git"...'
 Remove-Item "$PSScriptRoot/.git" -Recurse -Force
@@ -16,6 +36,11 @@ Remove-Item "$PSScriptRoot/init.ps1"
 
 Write-Host -ForegroundColor Cyan 'Removing "docs/"...'
 Remove-Item "$PSScriptRoot/docs" -Recurse -Force
+
+if (-Not $KeepGitCleanFiles) {
+    Remove-Item "$PSScriptRoot/git-clean.cmd"
+    Remove-Item "$PSScriptRoot/git-clean.sh"
+}
 
 Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
 Remove-Item "$PSScriptRoot/*/_keep.txt" -Recurse -Force
@@ -41,8 +66,10 @@ try {
     #   on Linux.
     & git add .
 
-    # Make sure the file is executable on Linux/macOS
-    & git add --chmod=+x git-clean.sh
+    if ($KeepGitCleanFiles) {
+        # Make sure the file is executable on Linux/macOS
+        & git add --chmod=+x git-clean.sh
+    }
 
     & git commit -m 'Added repository skeleton'
 
