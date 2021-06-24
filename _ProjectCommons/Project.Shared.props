@@ -64,7 +64,7 @@
 
   <ItemGroup Label="StyleGuide">
     <!-- This file specifies all styleguide rules (for Visual Studio). -->
-    <GlobalAnalyzerConfigFiles Include="$(ProjectsRootDirectory)_StyleGuide/styleguide.globalconfig" />
+    <GlobalAnalyzerConfigFiles Include="$(ProjectsRootDirectory)_StyleGuide/StyleGuide.globalconfig" />
   </ItemGroup>
 
 </Project>
