@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_StyleGuide", "_StyleGuide", "{FB7975C6-3C2F-4728-B3D0-DA59F3F724E4}"
 	ProjectSection(SolutionItems) = preProject
 		_StyleGuide\ca.globalconfig = _StyleGuide\ca.globalconfig
+		_StyleGuide\styleguide.globalconfig = _StyleGuide\styleguide.globalconfig
 	EndProjectSection
 EndProject
 Global
