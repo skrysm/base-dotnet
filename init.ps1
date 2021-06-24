@@ -42,6 +42,9 @@ Remove-Item "$PSScriptRoot/init.ps1"
 Write-Host -ForegroundColor Cyan 'Removing "docs/"...'
 Remove-Item "$PSScriptRoot/docs" -Recurse -Force
 
+Write-Host -ForegroundColor Cyan 'Removing "_StyleGuide/"...'
+Remove-Item "$PSScriptRoot/_StyleGuide" -Recurse -Force
+
 if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.cmd"
     Remove-Item "$PSScriptRoot/git-clean.sh"
