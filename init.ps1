@@ -21,9 +21,6 @@ $script:ErrorActionPreference = 'Stop'
     default { Write-Error "Invalid input: $KeepGitCleanFiles" }
 }
 
-Write-Host -ForegroundColor Cyan 'Removing ".git"...'
-Remove-Item "$PSScriptRoot/.git" -Recurse -Force
-
 Write-Host -ForegroundColor Cyan 'Removing "README.md"...'
 Remove-Item "$PSScriptRoot/README.md"
 
@@ -42,6 +39,12 @@ if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.cmd"
     Remove-Item "$PSScriptRoot/git-clean.sh"
 }
+
+Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
+Remove-Item "$PSScriptRoot/*/_keep.txt" -Recurse -Force
+
+Write-Host -ForegroundColor Cyan 'Removing ".git"...'
+Remove-Item "$PSScriptRoot/.git" -Recurse -Force
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Initializing new Git repository...'
