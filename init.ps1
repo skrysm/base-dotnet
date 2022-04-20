@@ -1,9 +1,9 @@
 #!/usr/bin/env pwsh
 param(
-    [string] $KeepGitCleanFiles = 'yes',
-
     [Parameter(Mandatory=$True)]
-    [string] $SolutionName
+    [string] $SolutionName,
+
+    [string] $KeepGitCleanFiles = 'yes'
 )
 
 # Stop on every error
@@ -87,11 +87,11 @@ try {
     & git commit -m 'Added repository skeleton'
 
     Write-Host
-    Write-Host -ForegroundColor Cyan 'Adding style guide files...'
+    Write-Host -ForegroundColor Cyan 'Adding project commons...'
 
-    & git submodule add https://github.com/skrysmanski/AppMotor.StyleGuide.git _StyleGuide/
+    & git submodule add https://github.com/skrysmanski/DotNetProjectCommons.git _ProjectCommons
 
-    & git commit -m 'Added style guide submodule'
+    & git commit -m 'Added project commons submodule'
 }
 finally {
     Pop-Location
