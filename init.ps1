@@ -25,9 +25,6 @@ $script:ErrorActionPreference = 'Stop'
 
 $SolutionName = $SolutionName.TrimEnd('.sln')
 
-Write-Host -ForegroundColor Cyan 'Removing ".git"...'
-Remove-Item "$PSScriptRoot/.git" -Recurse -Force
-
 Write-Host -ForegroundColor Cyan 'Removing "README.md"...'
 Remove-Item "$PSScriptRoot/README.md"
 
@@ -42,21 +39,22 @@ Remove-Item "$PSScriptRoot/init.ps1"
 Write-Host -ForegroundColor Cyan 'Removing "docs/"...'
 Remove-Item "$PSScriptRoot/docs" -Recurse -Force
 
-Write-Host -ForegroundColor Cyan 'Removing "_StyleGuide/"...'
-Remove-Item "$PSScriptRoot/_StyleGuide" -Recurse -Force
+Write-Host -ForegroundColor Cyan 'Removing "_ProjectCommons/"...'
+Remove-Item "$PSScriptRoot/_ProjectCommons" -Recurse -Force
 
 if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.cmd"
     Remove-Item "$PSScriptRoot/git-clean.sh"
 }
 
-
 Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
 Remove-Item "$PSScriptRoot/*/_keep.txt" -Recurse -Force
 
+Write-Host -ForegroundColor Cyan 'Removing ".git"...'
+Remove-Item "$PSScriptRoot/.git" -Recurse -Force
+
 Rename-Item "$PSScriptRoot/_BlankSolution.sln" "$PSScriptRoot/$SolutionName.sln"
 Rename-Item "$PSScriptRoot/_BlankSolution.sln.DotSettings" "$PSScriptRoot/$SolutionName.sln.DotSettings"
-
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Initializing new Git repository...'
