@@ -82,14 +82,14 @@ try {
         & git add --chmod=+x git-clean.sh
     }
 
-    & git commit -m 'Added repository skeleton'
+    & git commit -m 'Add repository skeleton'
 
     Write-Host
     Write-Host -ForegroundColor Cyan 'Adding project commons...'
 
     & git submodule add https://github.com/skrysmanski/DotNetProjectCommons.git _ProjectCommons
 
-    & git commit -m 'Added project commons submodule'
+    & git commit -m 'Add project commons submodule'
 }
 finally {
     Pop-Location
