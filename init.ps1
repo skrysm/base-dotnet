@@ -72,7 +72,7 @@ try {
         & git add --chmod=+x git-clean.sh
     }
 
-    & git commit -m 'Added repository skeleton'
+    & git commit -m 'Add repository skeleton'
 }
 finally {
     Pop-Location
