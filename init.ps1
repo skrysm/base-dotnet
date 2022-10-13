@@ -1,7 +1,10 @@
 #!/usr/bin/env pwsh
 param(
     [Parameter(Mandatory=$True)]
-    [string] $KeepGitCleanFiles
+    [string] $KeepGitCleanFiles,
+
+    [Parameter(Mandatory=$True)]
+    [string] $KeepGitCloneSubmodulesFiles
 )
 
 # Stop on every error
@@ -21,6 +24,20 @@ $script:ErrorActionPreference = 'Stop'
     default { Write-Error "Invalid input: $KeepGitCleanFiles" }
 }
 
+# NOTE: The cast to [bool] is required (to change the type of $KeepGitCloneSubmodulesFiles
+#   which is declared as string above).
+[bool] $KeepGitCloneSubmodulesFiles = switch ($KeepGitCloneSubmodulesFiles) {
+    'yes'    { $true }
+    'true'   { $true }
+    '$true'  { $true }
+
+    'no'     { $false }
+    'false'  { $false }
+    '$false' { $false }
+
+    default { Write-Error "Invalid input: $KeepGitCloneSubmodulesFiles" }
+}
+
 Write-Host -ForegroundColor Cyan 'Removing "README.md"...'
 Remove-Item "$PSScriptRoot/README.md"
 
@@ -38,6 +55,11 @@ Remove-Item "$PSScriptRoot/docs" -Recurse -Force
 if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.cmd"
     Remove-Item "$PSScriptRoot/git-clean.sh"
+}
+
+if (-Not $KeepGitCloneSubmodulesFiles) {
+    Remove-Item "$PSScriptRoot/git-clone-submodules.cmd"
+    Remove-Item "$PSScriptRoot/git-clone-submodules.sh"
 }
 
 Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
@@ -70,6 +92,10 @@ try {
     if ($KeepGitCleanFiles) {
         # Make sure the file is executable on Linux/macOS
         & git add --chmod=+x git-clean.sh
+    }
+    if ($KeepGitCloneSubmodulesFiles) {
+        # Make sure the file is executable on Linux/macOS
+        & git add --chmod=+x git-clone-submodules.sh
     }
 
     & git commit -m 'Add repository skeleton'
