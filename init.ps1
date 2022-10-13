@@ -7,8 +7,8 @@ param(
 # Stop on every error
 $script:ErrorActionPreference = 'Stop'
 
-# NOTE: The cast to [bool] is required (for some reason); if we didn't
-#   do this here, '$KeepGitCleanFiles' would remain a string.
+# NOTE: The cast to [bool] is required (to change the type of $KeepGitCleanFiles
+#   which is declared as string above).
 [bool] $KeepGitCleanFiles = switch ($KeepGitCleanFiles) {
     'yes'    { $true }
     'true'   { $true }
