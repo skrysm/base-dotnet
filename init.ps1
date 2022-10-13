@@ -3,14 +3,16 @@ param(
     [Parameter(Mandatory=$True)]
     [string] $SolutionName,
 
-    [string] $KeepGitCleanFiles = 'yes'
+    [string] $KeepGitCleanFiles = 'yes',
+
+    [string] $KeepGitCloneSubmodulesFiles = 'yes'
 )
 
 # Stop on every error
 $script:ErrorActionPreference = 'Stop'
 
-# NOTE: The cast to [bool] is required (for some reason); if we didn't
-#   do this here, '$KeepGitCleanFiles' would remain a string.
+# NOTE: The cast to [bool] is required (to change the type of $KeepGitCleanFiles
+#   which is declared as string above).
 [bool] $KeepGitCleanFiles = switch ($KeepGitCleanFiles) {
     'yes'    { $true }
     'true'   { $true }
@@ -21,6 +23,20 @@ $script:ErrorActionPreference = 'Stop'
     '$false' { $false }
 
     default { Write-Error "Invalid input: $KeepGitCleanFiles" }
+}
+
+# NOTE: The cast to [bool] is required (to change the type of $KeepGitCloneSubmodulesFiles
+#   which is declared as string above).
+[bool] $KeepGitCloneSubmodulesFiles = switch ($KeepGitCloneSubmodulesFiles) {
+    'yes'    { $true }
+    'true'   { $true }
+    '$true'  { $true }
+
+    'no'     { $false }
+    'false'  { $false }
+    '$false' { $false }
+
+    default { Write-Error "Invalid input: $KeepGitCloneSubmodulesFiles" }
 }
 
 $SolutionName = $SolutionName.TrimEnd('.sln')
@@ -45,6 +61,11 @@ Remove-Item "$PSScriptRoot/_ProjectCommons" -Recurse -Force
 if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.cmd"
     Remove-Item "$PSScriptRoot/git-clean.sh"
+}
+
+if (-Not $KeepGitCloneSubmodulesFiles) {
+    Remove-Item "$PSScriptRoot/git-clone-submodules.cmd"
+    Remove-Item "$PSScriptRoot/git-clone-submodules.sh"
 }
 
 Write-Host -ForegroundColor Cyan 'Removing "_keep.txt" files...'
@@ -80,6 +101,10 @@ try {
     if ($KeepGitCleanFiles) {
         # Make sure the file is executable on Linux/macOS
         & git add --chmod=+x git-clean.sh
+    }
+    if ($KeepGitCloneSubmodulesFiles) {
+        # Make sure the file is executable on Linux/macOS
+        & git add --chmod=+x git-clone-submodules.sh
     }
 
     & git commit -m 'Add repository skeleton'
