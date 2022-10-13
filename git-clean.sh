@@ -5,3 +5,6 @@
 #   what's the difference but when using '-X' some directories don't get
 #   deleted (for example, the "bin/Debug" directories in C# projects).
 git clean -f -d -x .
+
+# Clean all submodules. (The above command only cleans the current repo.)
+git submodule foreach --recursive git clean -f -d -x
