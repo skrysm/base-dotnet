@@ -1,6 +1,19 @@
 # Prevent git from messing around with line endings.
 * -text
 
+# ReSharper has (historically and up until the time of writing) being bad with
+# respecting line endings when generating code (often resulting in mixed line
+# endings). Unfortunately, the ReSharper devs don't seem to care too much about
+# this. So, with this we at least enforce consistent line endings when files are
+# committed to Git.
+#
+# For explanation why "crlf", see: https://github.com/skrysmanski/base-dotnet/blob/main/docs/cs-line-endings.md
+#
+# See also:
+# * https://youtrack.jetbrains.com/issue/RSRP-478837
+# * https://youtrack.jetbrains.com/issue/RSRP-494722
+*.cs text eol=crlf
+
 # NOTE: Visual Studio does not respect the end-of-line settings in
 #   .editorconfig for .csproj files. So, we let git handle this and
 #   just say that the end-of-line characters should match the platform

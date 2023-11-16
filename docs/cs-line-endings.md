@@ -6,7 +6,7 @@ Unfortunately, this is not possible because Linux line endings are not *fully* s
 
 Without *full* support, when editing C# files you'd sometimes get Linux line endings (as defined by `.editorconfig`) and sometimes Windows line endings (for features that don't support Linux line endings or `.editorconfig`) - resulting in files with **mixed line endings**.
 
-In other editors (like Visual Studio Code) this would not be a problem because they would **normalize the line endings** when saving a file. Unfortunately, Visual Studio does *not* do this (see [feature request](https://developercommunity.visualstudio.com/idea/1296741/normalize-line-endings-on-save-according-to-editor.html)).
+In other editors (like Visual Studio Code) this would not be a problem because they would **normalize the line endings** when saving a file. Unfortunately, Visual Studio does *not* do this (see [feature request](https://developercommunity.visualstudio.com/idea/1296741/normalize-line-endings-on-save-according-to-editor.html) which has since been closed without actually fixing the problem).
 
 So, for now, the pragmatic approach is to define line endings for C# files as `CRLF` (Windows line endings).
 
