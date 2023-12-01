@@ -51,6 +51,9 @@
 
 # Font files
 **/*.ttf filter=lfs diff=lfs merge=lfs
+**/*.otf filter=lfs diff=lfs merge=lfs
+**/*.woff filter=lfs diff=lfs merge=lfs
+**/*.woff2 filter=lfs diff=lfs merge=lfs
 
 # Office documents
 **/*.doc filter=lfs diff=lfs merge=lfs
