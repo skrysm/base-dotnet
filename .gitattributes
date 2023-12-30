@@ -78,3 +78,12 @@
 
 ## Other binary files
 **/*.bin filter=lfs diff=lfs merge=lfs
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Exclude files from GitHub's language statistics
+# https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#vendored-code
+
+# Helper scripts present in most repositories
+/git-clean.* linguist-vendored
+/git-clone-submodules.* linguist-vendored
