@@ -72,7 +72,7 @@ end_of_line = crlf
 # and maybe even strings to show to the user).
 charset = utf-8-bom
 
-# For explanation why "crlf", see: https://github.com/skrysmanski/base-dotnet/blob/main/docs/cs-line-endings.md
+# For explanation why "crlf", see: https://manski.net/articles/dotnet/line-endings
 # NOTE: This is also enforced through .gitattributes.
 end_of_line = crlf
 
