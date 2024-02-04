@@ -49,9 +49,6 @@ Remove-Item "$PSScriptRoot/LICENSE.txt"
 Write-Host -ForegroundColor Cyan 'Removing "init.ps1"...'
 Remove-Item "$PSScriptRoot/init.ps1"
 
-Write-Host -ForegroundColor Cyan 'Removing "docs/"...'
-Remove-Item "$PSScriptRoot/docs" -Recurse -Force
-
 if (-Not $KeepGitCleanFiles) {
     Remove-Item "$PSScriptRoot/git-clean.cmd"
     Remove-Item "$PSScriptRoot/git-clean.sh"
