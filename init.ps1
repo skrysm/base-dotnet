@@ -109,7 +109,7 @@ try {
     Write-Host
     Write-Host -ForegroundColor Cyan 'Adding project commons...'
 
-    & git submodule add https://github.com/skrysmanski/DotNetProjectCommons.git _ProjectCommons
+    & git submodule add https://github.com/skrysm/DotNetProjectCommons.git _ProjectCommons
 
     & git commit -m 'Add project commons submodule'
 }
