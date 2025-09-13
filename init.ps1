@@ -71,8 +71,8 @@ Remove-Item "$PSScriptRoot/*/_keep.txt" -Recurse -Force
 Write-Host -ForegroundColor Cyan 'Removing ".git"...'
 Remove-Item "$PSScriptRoot/.git" -Recurse -Force
 
-Rename-Item "$PSScriptRoot/_BlankSolution.sln" "$PSScriptRoot/$SolutionName.sln"
-Rename-Item "$PSScriptRoot/_BlankSolution.sln.DotSettings" "$PSScriptRoot/$SolutionName.sln.DotSettings"
+Rename-Item "$PSScriptRoot/_BlankSolution.slnx" "$PSScriptRoot/$SolutionName.slnx"
+Rename-Item "$PSScriptRoot/_BlankSolution.slnx.DotSettings" "$PSScriptRoot/$SolutionName.slnx.DotSettings"
 
 Write-Host
 Write-Host -ForegroundColor Cyan 'Initializing new Git repository...'
