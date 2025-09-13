@@ -20,5 +20,5 @@
     <File Path="_ProjectCommons/Project.Tool.props" />
     <File Path="_ProjectCommons/StyleGuide.globalconfig" />
   </Folder>
-  <Folder Name="/tests/" />
+  <Folder Name="/Tests/" />
 </Solution>
