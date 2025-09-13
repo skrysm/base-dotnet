@@ -20,8 +20,5 @@
     <File Path="_ProjectCommons/Project.Tool.props" />
     <File Path="_ProjectCommons/StyleGuide.globalconfig" />
   </Folder>
-  <Folder Name="/src/">
-    <File Path="src/.editorconfig" />
-  </Folder>
   <Folder Name="/tests/" />
 </Solution>
