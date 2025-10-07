@@ -60,7 +60,9 @@ indent_size = 2
 [*.{bat,cmd}]
 end_of_line = crlf
 
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 #
 # C# files
@@ -72,6 +74,13 @@ charset = utf-8-bom
 
 # For explanation why "crlf", see: https://manski.net/articles/dotnet/line-endings
 # NOTE: This is also enforced through .gitattributes.
+end_of_line = crlf
+
+
+#
+# XAML files
+#
+[*.xaml]
 end_of_line = crlf
 
 
@@ -97,6 +106,29 @@ end_of_line = unset
 [*.cshtml]
 # BOM is supported and files may contain native (i.e. non-English) texts.
 charset = utf-8-bom
+
+
+#
+# .resx files
+#
+[*.resx]
+end_of_line = crlf
+# The header contains various trailing whitespace which is re-added every time the file is edited
+# with the Visual Studio editor. So don't bother trimming them.
+trim_trailing_whitespace = false
+# The .resx editor always removes the final line.
+insert_final_newline = false
+
+
+#
+# T4 text template files
+#
+[*.tt]
+# BOM is supported and because the files may contain native (i.e. non-English)
+# text, it's important that these files are encoded properly.
+charset = utf-8-bom
+# Must be CRLF; they don't work well with just LF
+end_of_line = crlf
 
 
 #
@@ -137,6 +169,26 @@ indent_size = 2
 # ReSharper creates .DotSettings files with BOM.
 charset = utf-8-bom
 indent_style = tab
+
+
+#
+# Publishing profiles
+#
+[*.pubxml]
+charset = utf-8-bom
+insert_final_newline = false
+indent_size = 2
+
+
+#
+# NuGet.config file
+# NOTE: These settings are mirrored from the settings used on TFS for its NuGet.config.
+#
+[NuGet.config]
+charset = utf-8-bom
+indent_size = 2
+end_of_line = crlf
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
