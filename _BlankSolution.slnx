@@ -1,4 +1,5 @@
 <Solution>
+  <Folder Name="/Tests/" />
   <Folder Name="/_SolutionItems/">
     <File Path=".editorconfig" />
     <File Path="Directory.Build.props" />
@@ -20,5 +21,4 @@
     <File Path="_ProjectCommons/Project.Tool.props" />
     <File Path="_ProjectCommons/StyleGuide.globalconfig" />
   </Folder>
-  <Folder Name="/Tests/" />
 </Solution>
